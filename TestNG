@@ -1,0 +1,79 @@
+TestNG:
+Is a testing tool that help us to structure our test cases using different annotations
+Mostly in industry we sue Cucumber,
+Benefits of using TestN:
+1)reports
+2)Annotations batch execution@before, @beforeclass
+3)parallel testing(executing number of test cases in same time)
+4)batch execution - we can execute
+5)Assertions - Hard assertions and soft assertions
+6)Data Parameterization
+
+it can be integrated with cucumber, maven and selenium.
+
+1)Annotations:
+--We don not need any main method
+--annotation is a tag that provides additional information about class, interface or method in TestNG
+--annotation
+@Test
+@BeforeMethod
+@AfterMethod
+@BeforeClass
+@AfterClass
+
+1.@Test
+We should write our test cases under this annotation
+This is the main annotation in testNG
+
+2.@BeforeMethod:
+runs before @test is executed, it is also called pre condiiton
+
+3.@AfterMethod:
+runs after each @test method, it is also called post condition
+
+Priority:
+By default the priority is zero of all the test cases
+
+Enable and Disable:
+Enable is true by default fo if we make it true doesn't do anything, if we call it false it is not going
+to run particular code
+During work if we find some cases have a bug we send it to devs, after that no point of executing
+ case which has a bug so we make it Enable = False and continue working
+
+DependsOn:
+@Test(dependsOnMethods = 'methodName')
+will only run if depend method it passed successfully otherwise it will skip
+
+HardAssertions:
+We have hardAssertions in testNG, in order to use assertion we use: Assert.asertiontype();
+
+1.Assert.Asserttrue();
+check the state of boolean variable, if boolean variable is true it passes if false it fails
+exsample:
+  //asert if textbox is dysplayed
+        Boolean displayed=username.isDisplayed();
+        //assertion if it is actually displayd or not
+        Assert.assertTrue(displayed);
+
+2.Assert.Assertequals(String1, String2);
+it passes if String1 is equal to String2, it fails if two are not equal
+
+In HARD ASSERTIONS If we have multiple assertions and one of the assertions fail,
+it quits other assertions and declare test case has failed.
+
+SoftAssertions:
+Continue to check all the assertions regardless of the fact elen one or more of them have failed
+what is not the case with Hard assertions (Hard assertions stop executing when first one fails).
+
+Step by step in order to use Soft Assertions:
+1. Declaration --> SoftAssert soft=new SoftAssert();
+2. soft.AssertEquals(String, String)
+3. At the end we must put-->soft.AssertAll();
+
+Mostly we will use soft assertions
+==========================================================================================
+CREATE GIT REPO:
+1.Navigate where location of repo is
+2.Decide where to Create repo
+DO NOT CREATE SUBREPOSITORIES()
+3.Initialize repo gitinit
